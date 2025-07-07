@@ -9,85 +9,97 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600&display=swap"
         rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    <link rel="icon" href="./images/logo.png" type="image/png" />
+    <link rel="icon" href="/images/logo.png" type="image/png" />
 </head>
 
 <body class="antialiased">
-    <!-- Header/Navigation Bar -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header id="mainHeader" class="sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
-            <a href="index.html" class="text-4xl text-primary-blue font-bold">DR. SHAHID SULTAN HAJAM</a>
+            <div class="flex items-center">
+                <a href="index.html">
+                    <img src="./images/logo.png" alt="Logo" class="mr-4 h-9 rounded-md">
+                </a>
+                <a href="index.html" class="text-3xl text-white font-bold transition-colors duration-300">DR. SHAHID
+                    SULTAN HAJAM</a>
+            </div>
             <nav>
                 <ul class="flex space-x-2 md:space-x-4">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="publications.html" class="nav-link">Publications</a></li>
-                    <li><a href="patents-projects.html" class="nav-link">Patents & Projects</a></li>
-                    <li><a href="courses.html" class="nav-link">Courses</a></li>
+                    <li><a href="patents-projects.html" class="nav-link">Patents</a></li>
+                    <li><a href="courses.html" class="nav-link">Courses & Certifications</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Publications Section -->
-    <section id="publications" class="section">
-        <div class="container mx-auto">
-            <h2 class="text-4xl text-secondary-blue text-center mb-12">Publications</h2>
 
-            <!-- Journals -->
+    <section id="publications-page-content" class="bg-gray-50">
+        <div id="publications-banner"
+            class="min-h-[60vh] bg-cover bg-center bg-no-repeat flex justify-center items-center px-4 py-20"
+            style="background-image: url('./images/background.jpg')">
+            <div
+                class="bg-white/10 backdrop-blur-md rounded-xl shadow-lg border border-white/20 p-6 md:p-10 max-w-5xl w-full text-center animate-fade-in-up">
+                <h2 class="text-4xl text-white text-center mb-8 mt-8">Publications</h2>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 py-10">
             <h3 class="text-3xl text-primary-blue mb-6">Journals</h3>
             <div class="space-y-8 mb-12">
                 <div class="card">
                     <p class="text-lg text-gray-700 leading-relaxed">
-                        • Shahid Sultan Hajam, Shabir Ahmad Sofi "IoT-Fog architectures in smart city applications: A
-                        survey" China Communications, Volume 18, Issue 11, ISSN 1673-5447 Page 117-140, (2021) (SCIE,
-                        SCOPUS), IF 4.1.
+                        5. <strong>(2024)</strong> Shahid Sultan Hajam "Deadline-cost aware task scheduling algorithm in
+                        fog computing networks" — <em>International Journal of Communication Systems</em> (SCIE,
+                        SCOPUS), IF 1.7.
                     </p>
                 </div>
                 <div class="card">
                     <p class="text-lg text-gray-700 leading-relaxed">
-                        • Shahid Sultan Hajam, Shabir Ahmad Sofi "Resource Management in Fog Computing using Greedy and
-                        Semi-greedy Spider Monkey Optimization " Soft Computing,pp. 1-11, ISSN 1432-7643, (2023) (SCIE,
-                        SCOPUS) IF 4.1.
+                        4. <strong>(2023)</strong> Shahid Sultan Hajam, Shabir Ahmad Sofi "Resource Management in Fog
+                        Computing using Greedy and Semi-greedy Spider Monkey Optimization" — <em>Soft Computing</em>,
+                        pp. 1–11, ISSN 1432-7643 (SCIE, SCOPUS), IF 4.1.
                     </p>
                 </div>
                 <div class="card">
                     <p class="text-lg text-gray-700 leading-relaxed">
-                        • Shahid Sultan Hajam, Shabir Ahmad Sofi "Fog Task Scheduling using Clustering based Randomized
-                        Round Robin " Scalable Computing: Practice and Experience, Volume 22, Issues 3, pp. 294-301,
-                        ISSN 1895-1767 (2021) (ESCI, SCOPUS).
+                        3. <strong>(2023)</strong> Shahid Sultan Hajam, Shabir Ahmad Sofi "Spider Monkey Optimization
+                        based Resource Allocation and Scheduling in Fog Computing Environment" — <em>High Confidence
+                            Computing</em>, Vol. 3, Issue 3, ISSN 2667-2952 (ESCI, SCOPUS), IF 3.2.
                     </p>
                 </div>
                 <div class="card">
                     <p class="text-lg text-gray-700 leading-relaxed">
-                        • Shahid Sultan Hajam, Shabir Ahmad Sofi "Spider Monkey Optimization based Resource Allocation
-                        and Scheduling in Fog Computing Environment " High Confidence Computing, Volume 3, Issues 3,
-                        ISSN 2667-2952, (2023) (ESCI, SCOPUS) IF 3.2.
+                        2. <strong>(2021)</strong> Shahid Sultan Hajam, Shabir Ahmad Sofi "IoT-Fog architectures in
+                        smart city applications: A survey" — <em>China Communications</em>, Vol. 18, Issue 11, ISSN
+                        1673-5447, pp. 117–140 (SCIE, SCOPUS), IF 4.1.
                     </p>
                 </div>
                 <div class="card">
                     <p class="text-lg text-gray-700 leading-relaxed">
-                        • Shahid Sultan Hajam "Deadline-cost aware task scheduling algorithm in fog computing networks "
-                        International Journal of Communication Systems, (2024) (SCIE, SCOPUS) IF 1.7.
+                        1. <strong>(2021)</strong> Shahid Sultan Hajam, Shabir Ahmad Sofi "Fog Task Scheduling using
+                        Clustering based Randomized Round Robin" — <em>Scalable Computing: Practice and Experience</em>,
+                        Vol. 22, Issue 3, pp. 294–301, ISSN 1895-1767 (ESCI, SCOPUS).
                     </p>
                 </div>
             </div>
 
-            <!-- Conferences -->
             <h3 class="text-3xl text-primary-blue mb-6">Conferences</h3>
             <div class="space-y-8">
                 <div class="card">
                     <p class="text-lg text-gray-700 leading-relaxed">
-                        • "Delay Minimization by Offloading in Fog Computing" 2019 International Conference on
-                        Communication and Electronics Systems (ICCES), pp. 1816-1820, (2019) (Scopus).
+                        1. <strong>(2019)</strong> "Delay Minimization by Offloading in Fog Computing" — <em>2019
+                            International Conference on Communication and Electronics Systems (ICCES)</em>, pp.
+                        1816–1820 (Scopus).
                     </p>
                 </div>
             </div>
         </div>
+
     </section>
 
-    <!-- Footer -->
     <footer class="text-center py-8 border-t border-gray-200">
         <p class="text-gray-600">
             © <span id="currentYear"></span> Dr. Shahid Sultan Hajam | Developed by
@@ -96,10 +108,7 @@
         </p>
     </footer>
 
-    <script>
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

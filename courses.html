@@ -13,29 +13,41 @@
 </head>
 
 <body class="antialiased">
-    <!-- Header/Navigation Bar -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+     <header id="mainHeader" class="sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
-            <a href="index.html" class="text-4xl text-primary-blue font-bold">DR. SHAHID SULTAN HAJAM</a>
+            <div class="flex items-center">
+                <a href="index.html">
+                    <img src="./images/logo.png" alt="Logo" class="mr-4 h-9 rounded-md">
+                </a>
+                <a href="index.html" class="text-3xl text-white font-bold transition-colors duration-300">DR. SHAHID
+                    SULTAN HAJAM</a>
+            </div>
             <nav>
                 <ul class="flex space-x-2 md:space-x-4">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="publications.html" class="nav-link">Publications</a></li>
-                    <li><a href="patents-projects.html" class="nav-link">Patents & Projects</a></li>
-                    <li><a href="courses.html" class="nav-link">Courses</a></li>
+                    <li><a href="patents-projects.html" class="nav-link">Patents</a></li>
+                    <li><a href="courses.html" class="nav-link">Courses & Certifications</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Courses Section -->
-    <section id="courses" class="section bg-pattern-light">
-        <div class="container mx-auto">
-            <h2 class="text-4xl text-secondary-blue text-center mb-12">Courses & Certifications</h2>
 
-            <!-- Courses Interested in Teaching -->
+    <section id="courses-certifications-page-content" class="bg-gray-50"> 
+        <div id="courses-certifications-banner"
+            class="min-h-[60vh] bg-cover bg-center bg-no-repeat flex justify-center items-center px-4 py-20"
+            style="background-image: url('./images/background.jpg')">
+            <div
+                class="bg-white/10 backdrop-blur-md rounded-xl shadow-lg border border-white/20 p-6 md:p-10 max-w-5xl w-full text-center animate-fade-in-up">
+                <h2 class="text-4xl text-white text-center mb-8 mt-8">Courses & Certifications</h2> 
+                </div>
+        </div>
+
+        <div class="container mx-auto px-6 py-10"> 
+
             <h3 class="text-3xl text-primary-blue mb-6">Courses Interested in Teaching</h3>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 <div class="card text-center">
@@ -55,7 +67,6 @@
                 </div>
             </div>
 
-            <!-- Certifications -->
             <h3 class="text-3xl text-primary-blue mb-6">Certifications & FDPs</h3>
             <div class="space-y-8">
                 <div class="card">
@@ -100,7 +111,7 @@
                         • Online FDP on "Cognitive Skills and Design Thinking" from 27-03-2021 to 31-03-2021 organized
                         at National Institute of Technology Srinagar, Hazratbal, India.
                     </p>
-                </div>
+                L</div>
                 <div class="card">
                     <p class="text-lg text-gray-700 leading-relaxed">
                         • 3 Days workshop on capacity building on e-waste management (NIELIT Srinagar, march 2018).
@@ -125,7 +136,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="text-center py-8 border-t border-gray-200">
         <p class="text-gray-600">
             © <span id="currentYear"></span> Dr. Shahid Sultan Hajam | Developed by
@@ -134,10 +144,7 @@
         </p>
     </footer>
 
-    <script>
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
