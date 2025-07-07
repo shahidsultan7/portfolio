@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Shahid Sultan Hajam - Publications</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" href="./images/logo.png" type="image/png" />
+</head>
+
+<body class="antialiased">
+    <!-- Header/Navigation Bar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+            <a href="index.html" class="text-4xl text-primary-blue font-bold">DR. SHAHID SULTAN HAJAM</a>
+            <nav>
+                <ul class="flex space-x-2 md:space-x-4">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="publications.html" class="nav-link">Publications</a></li>
+                    <li><a href="patents-projects.html" class="nav-link">Patents & Projects</a></li>
+                    <li><a href="courses.html" class="nav-link">Courses</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section">
+        <div class="container mx-auto">
+            <h2 class="text-4xl text-secondary-blue text-center mb-12">Publications</h2>
+
+            <!-- Journals -->
+            <h3 class="text-3xl text-primary-blue mb-6">Journals</h3>
+            <div class="space-y-8 mb-12">
+                <div class="card">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        • Shahid Sultan Hajam, Shabir Ahmad Sofi "IoT-Fog architectures in smart city applications: A
+                        survey" China Communications, Volume 18, Issue 11, ISSN 1673-5447 Page 117-140, (2021) (SCIE,
+                        SCOPUS), IF 4.1.
+                    </p>
+                </div>
+                <div class="card">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        • Shahid Sultan Hajam, Shabir Ahmad Sofi "Resource Management in Fog Computing using Greedy and
+                        Semi-greedy Spider Monkey Optimization " Soft Computing,pp. 1-11, ISSN 1432-7643, (2023) (SCIE,
+                        SCOPUS) IF 4.1.
+                    </p>
+                </div>
+                <div class="card">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        • Shahid Sultan Hajam, Shabir Ahmad Sofi "Fog Task Scheduling using Clustering based Randomized
+                        Round Robin " Scalable Computing: Practice and Experience, Volume 22, Issues 3, pp. 294-301,
+                        ISSN 1895-1767 (2021) (ESCI, SCOPUS).
+                    </p>
+                </div>
+                <div class="card">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        • Shahid Sultan Hajam, Shabir Ahmad Sofi "Spider Monkey Optimization based Resource Allocation
+                        and Scheduling in Fog Computing Environment " High Confidence Computing, Volume 3, Issues 3,
+                        ISSN 2667-2952, (2023) (ESCI, SCOPUS) IF 3.2.
+                    </p>
+                </div>
+                <div class="card">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        • Shahid Sultan Hajam "Deadline-cost aware task scheduling algorithm in fog computing networks "
+                        International Journal of Communication Systems, (2024) (SCIE, SCOPUS) IF 1.7.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Conferences -->
+            <h3 class="text-3xl text-primary-blue mb-6">Conferences</h3>
+            <div class="space-y-8">
+                <div class="card">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        • "Delay Minimization by Offloading in Fog Computing" 2019 International Conference on
+                        Communication and Electronics Systems (ICCES), pp. 1816-1820, (2019) (Scopus).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 border-t border-gray-200">
+        <p class="text-gray-600">
+            © <span id="currentYear"></span> Dr. Shahid Sultan Hajam | Developed by
+            <a href="https://nimrawani04.github.io/portfolio/" class="font-bold underline">Nimra Wani</a> | All Rights
+            Reserved.
+        </p>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
