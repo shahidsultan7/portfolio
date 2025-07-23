@@ -2,14 +2,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Mobile Menu Logic ---
     const mobileMenuButton = document.getElementById('mobileMenuButton');
     const mobileSideMenu = document.getElementById('mobileSideMenu');
-    const closeMenuButton = document.getElementById('closeMenuButton');
+    
+    // Create an overlay element
+    const overlay = document.createElement('div');
+    overlay.classList.add('fixed', 'inset-0', 'bg-black', 'z-40', 'transition-opacity', 'duration-300', 'ease-in-out');
+    overlay.style.opacity = '0';
+    overlay.style.pointerEvents = 'none';
+    document.body.appendChild(overlay);
 
     // Function to open the mobile menu
     function openMobileMenu() {
         if (mobileSideMenu) {
             mobileSideMenu.classList.remove('-translate-x-full');
             mobileSideMenu.classList.add('translate-x-0');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling on the main content
+            mobileMenuButton.classList.add('is-open'); // For icon animation
+            overlay.style.opacity = '0.5';
+            overlay.style.pointerEvents = 'auto';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
         }
     }
 
@@ -18,19 +27,26 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mobileSideMenu) {
             mobileSideMenu.classList.remove('translate-x-0');
             mobileSideMenu.classList.add('-translate-x-full');
+            mobileMenuButton.classList.remove('is-open'); // For icon animation
+            overlay.style.opacity = '0';
+            overlay.style.pointerEvents = 'none';
             document.body.style.overflow = ''; // Restore scrolling
         }
     }
 
-    // Event listener for opening the mobile menu
+    // Event listener for the main hamburger button to toggle the menu
     if (mobileMenuButton) {
-        mobileMenuButton.addEventListener('click', openMobileMenu);
+        mobileMenuButton.addEventListener('click', () => {
+            if (mobileMenuButton.classList.contains('is-open')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        });
     }
-
-    // Event listener for closing the mobile menu
-    if (closeMenuButton) {
-        closeMenuButton.addEventListener('click', closeMobileMenu);
-    }
+    
+    // Event listener for overlay click to close menu
+    overlay.addEventListener('click', closeMobileMenu);
 
     // Close mobile menu when a link inside it is clicked
     const mobileNavLinks = mobileSideMenu ? mobileSideMenu.querySelectorAll('.nav-link') : [];
@@ -41,54 +57,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Dynamic Header Color Change Logic ---
     const mainHeader = document.getElementById('mainHeader');
-    // Target the span element by its ID for the header title
     const headerTitleSpan = mainHeader ? mainHeader.querySelector('#headerTitleSpan') : null;
-    // Select all navigation links (both desktop and mobile)
     const allNavLinks = document.querySelectorAll('.nav-link');
-    // Select the mobile menu button itself for color change
-    // mobileMenuButton is already defined at the top, so we can use it directly.
 
     function handleHeaderScroll() {
-        if (!mainHeader) return; // Exit if header not found
+        if (!mainHeader) return;
 
         const scrollPosition = window.scrollY;
-        // Define the Tailwind class for the gray color
-        const grayTextColorClass = 'text-gray-700'; // Using Tailwind's default gray-700
+        const grayTextColorClass = 'text-gray-700';
 
         if (scrollPosition > 50) {
             mainHeader.classList.add('scrolled-header');
-            // Change header title color to gray
             if (headerTitleSpan) {
                 headerTitleSpan.classList.remove('text-white');
                 headerTitleSpan.classList.add(grayTextColorClass);
             }
-            // Change all nav link colors to gray
             allNavLinks.forEach(link => {
-                link.classList.remove('text-white');
-                link.classList.add(grayTextColorClass);
+                if (!link.closest('#mobileSideMenu')) { // Don't change mobile menu links
+                    link.classList.remove('text-white');
+                    link.classList.add(grayTextColorClass);
+                }
             });
-            // Change hamburger menu icon color to gray
-            if (mobileMenuButton) {
-                mobileMenuButton.classList.remove('text-white');
-                mobileMenuButton.classList.add(grayTextColorClass);
-            }
         } else {
             mainHeader.classList.remove('scrolled-header');
-            // Revert header title color to white
             if (headerTitleSpan) {
                 headerTitleSpan.classList.remove(grayTextColorClass);
                 headerTitleSpan.classList.add('text-white');
             }
-            // Revert all nav link colors to white
             allNavLinks.forEach(link => {
-                link.classList.remove(grayTextColorClass);
-                link.classList.add('text-white');
+                 if (!link.closest('#mobileSideMenu')) {
+                    link.classList.remove(grayTextColorClass);
+                    link.classList.add('text-white');
+                }
             });
-            // Revert hamburger menu icon color to white
-            if (mobileMenuButton) {
-                mobileMenuButton.classList.remove(grayTextColorClass);
-                mobileMenuButton.classList.add('text-white');
-            }
         }
     }
 
@@ -102,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     behavior: 'smooth'
                 });
             }
-            // If it's a mobile nav link, also close the menu
             if (this.closest('#mobileSideMenu')) {
                 closeMobileMenu();
             }
@@ -117,15 +117,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Active Navigation Link Highlighting on Scroll ---
     const sections = document.querySelectorAll('section[id]');
-    // navLinks is already defined as allNavLinks, but keeping for this function's scope
     const navLinks = document.querySelectorAll('.nav-link');
 
     function highlightNavLinkOnScroll() {
         let currentSectionId = '';
+        const offset = mainHeader ? mainHeader.offsetHeight : 0;
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const offset = mainHeader ? mainHeader.offsetHeight : 0;
             if (window.scrollY >= sectionTop - offset - window.innerHeight / 3) {
                 currentSectionId = section.getAttribute('id');
             }

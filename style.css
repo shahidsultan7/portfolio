@@ -218,3 +218,46 @@ footer p:hover span.text-primary-blue {
 .image-container:hover img {
     transform: scale(1.1);
 }
+
+/* --- NEW MOBILE MENU STYLES --- */
+
+/* Hamburger Icon & Animation */
+.hamburger-icon span {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform-origin: center;
+}
+
+.scrolled-header #mobileMenuButton .hamburger-icon span {
+    background-color: var(--gray-text);
+}
+
+#mobileMenuButton.is-open .hamburger-icon span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+#mobileMenuButton.is-open .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+#mobileMenuButton.is-open .hamburger-icon span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Mobile Side Menu Panel */
+#mobileSideMenu {
+    background-color: #111827; /* bg-gray-900 */
+}
+
+#mobileSideMenu .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.125rem; /* text-lg */
+    transition: background-color 0.2s ease;
+}
+
+#mobileSideMenu .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}

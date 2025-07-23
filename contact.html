@@ -16,75 +16,59 @@
 
 <body class="antialiased">
     <header id="mainHeader" class="sticky top-0 z-50">
-        <div class="container mx-auto px-4 sm:px-6 py-3 flex flex-col md:flex-row justify-between items-center">
-            <!-- Container for hamburger and logo/title. Uses flex to keep them grouped on mobile. -->
-            <div class="flex items-center justify-start w-full md:w-auto md:justify-between">
-                <div class="flex items-center">
-                    <!-- Hamburger Icon for Mobile (hidden on medium screens and up) -->
-                    <div class="md:hidden">
-                        <button id="mobileMenuButton"
-                            class="text-white focus:outline-none p-2 rounded-md hover:bg-gray-700">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 6h16M4 12h16m-4 6h4"></path>
-                            </svg>
-                        </button>
-                    </div>
+    <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+        <!-- Logo and Title Link -->
+        <a href="index.html" class="flex items-center">
+            <img src="./images/logo.png" alt="Logo" class="mr-2 h-8 sm:h-9 rounded-md">
+            <span class="text-xl sm:text-2xl md:text-3xl font-bold transition-colors duration-300 text-white"
+                id="headerTitleSpan">DR. SHAHID SULTAN</span>
+        </a>
 
-                    <!-- Logo and Title Link -->
-                    <a href="index.html" class="flex items-center">
-                        <img src="./images/logo.png" alt="Logo" class="mr-2 h-8 sm:h-9 rounded-md">
-                        <!-- text-white added back here, will be overridden by custom CSS when scrolled -->
-                        <span
-                            class="text-xl sm:text-2xl md:text-3xl font-bold transition-colors duration-300 text-white"
-                            id="headerTitleSpan">DR. SHAHID SULTAN</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Desktop Navigation (hidden on mobile, block on medium screens and up) -->
-            <nav id="desktopNav" class="hidden md:block mt-4 md:mt-0">
-                <ul class="flex space-x-2 md:space-x-4">
-                    <!-- text-white added back to nav-link elements, will be overridden by custom CSS when scrolled -->
-                    <li><a href="index.html" class="nav-link text-white hover:text-gray-300">Home</a></li>
-                    <li><a href="about.html" class="nav-link text-white hover:text-gray-300">About</a></li>
-                    <li><a href="publications.html" class="nav-link text-white hover:text-gray-300">Publications</a>
-                    </li>
-                    <li><a href="patents-projects.html" class="nav-link text-white hover:text-gray-300">Patents</a></li>
-                    <li><a href="courses.html" class="nav-link text-white hover:text-gray-300">Courses &
-                            Certifications</a></li>
-                    <li><a href="contact.html" class="nav-link text-white hover:text-gray-300">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-
-        <!-- Mobile Side Menu (Off-canvas) -->
-        <div id="mobileSideMenu"
-            class="fixed top-0 left-0 w-64 h-full bg-gray-900 text-white p-6 transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-lg">
-            <div class="flex justify-end mb-6">
-                <button id="closeMenuButton" class="text-white focus:outline-none p-2 rounded-md hover:bg-gray-700">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                        </path>
-                    </svg>
-                </button>
-            </div>
-            <ul class="flex flex-col space-y-4">
-                <!-- text-white added back to nav-link elements here as well -->
-                <li><a href="index.html" class="nav-link text-lg text-white hover:text-gray-300">Home</a></li>
-                <li><a href="about.html" class="nav-link text-lg text-white hover:text-gray-300">About</a></li>
-                <li><a href="publications.html" class="nav-link text-lg text-white hover:text-gray-300">Publications</a>
-                </li>
-                <li><a href="patents-projects.html" class="nav-link text-lg text-white hover:text-gray-300">Patents</a>
-                </li>
-                <li><a href="courses.html" class="nav-link text-lg text-white hover:text-gray-300">Courses &
-                        Certifications</a></li>
-                <li><a href="contact.html" class="nav-link text-lg text-white hover:text-gray-300">Contact</a></li>
+        <!-- Desktop Navigation -->
+        <nav id="desktopNav" class="hidden md:block">
+            <ul class="flex space-x-2 md:space-x-4">
+                <li><a href="index.html" class="nav-link text-white hover:text-gray-300">Home</a></li>
+                <li><a href="about.html" class="nav-link text-white hover:text-gray-300">About</a></li>
+                <li><a href="publications.html" class="nav-link text-white hover:text-gray-300">Publications</a></li>
+                <li><a href="patents-projects.html" class="nav-link text-white hover:text-gray-300">Patents</a></li>
+                <li><a href="courses.html" class="nav-link text-white hover:text-gray-300">Courses & Certifications</a></li>
+                <li><a href="contact.html" class="nav-link text-white hover:text-gray-300">Contact</a></li>
             </ul>
+        </nav>
+
+        <!-- Hamburger Menu Button -->
+        <div class="md:hidden">
+            <button id="mobileMenuButton" class="relative z-50 p-2">
+                <div class="hamburger-icon space-y-2">
+                    <span class="block w-8 h-0.5 bg-white"></span>
+                    <span class="block w-8 h-0.5 bg-white"></span>
+                    <span class="block w-8 h-0.5 bg-white"></span>
+                </div>
+            </button>
         </div>
-    </header>
+    </div>
+
+    <!-- Mobile Side Menu (Off-canvas) -->
+    <div id="mobileSideMenu" class="fixed top-0 left-0 w-72 h-full bg-gray-900 text-white p-6 transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-lg flex flex-col">
+        <div class="flex justify-between items-center pb-4 border-b border-gray-700">
+             <a href="index.html" class="flex items-center">
+                <img src="./images/logo.png" alt="Logo" class="mr-2 h-8 rounded-md">
+                <span class="text-xl font-bold">DR. SHAHID SULTAN</span>
+            </a>
+            <!-- <button id="closeMenuButton" class="text-white focus:outline-none p-2 rounded-md hover:bg-gray-700">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button> -->
+        </div>
+        <ul class="flex flex-col space-y-2 py-4 flex-grow">
+            <li><a href="index.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span>Home</span></a></li>
+            <li><a href="about.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span>About</span></a></li>
+            <li><a href="publications.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg><span>Publications</span></a></li>
+            <li><a href="patents-projects.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-award"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg><span>Patents</span></a></li>
+            <li><a href="courses.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg><span>Courses & Certs</span></a></li>
+            <li><a href="contact.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span>Contact</span></a></li>
+        </ul>
+    </div>
+</header>
 
 
     <section id="contact-page-content" class="bg-gray-50">
@@ -101,56 +85,130 @@
             </div>
         </div>
 
-        <div class="container mx-auto px-6 py-10">
-            <div class="flex flex-col items-center space-y-4 mb-6">
-                <a href="mailto:shahid.nit002@gmail.com" class="btn-primary text-xl inline-block">
-                    Email: shahid.nit002@gmail.com
-                </a>
-                <a href="mailto:shahid.sultan@cukashmir.ac.in" class="btn-primary text-xl inline-block">
-                    Email: shahid.sultan@cukashmir.ac.in
-                </a>
-                <p class="text-lg text-gray-700 font-semibold">
-                    Phone: <a href="tel:+917006687396" class="text-blue-600 hover:underline">+91-7006687396</a>
-                </p>
-            </div>
-            <div class="flex justify-center space-x-6 mt-6">
-                <a href="https://www.linkedin.com/in/shahid-sultan-770b15101?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                    class="text-primary-blue hover:text-secondary-blue text-3xl transition-colors"
-                    aria-label="LinkedIn Profile">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                        class="bi bi-linkedin" viewBox="0 0 16 16">
-                        <path
-                            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-                    </svg>
-                </a>
-                <a href="https://github.com/shahidsultan7"
-                    class="text-primary-blue hover:text-secondary-blue text-3xl transition-colors"
-                    aria-label="GitHub Profile">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                        class="bi bi-github" viewBox="0 0 16 16">
-                        <path
-                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                    </svg>
-                </a>
-                <!-- <a href="#" class="text-primary-blue hover:text-secondary-blue text-3xl transition-colors"
-                    aria-label="Research Gate Profile">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                        class="bi bi-journal-text" viewBox="0 0 16 16">
-                        <path
-                            d="M5 10.5h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm-.5-3.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7zM5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5z" />
-                        <path
-                            d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-12a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3z" />
-                    </svg>
-                </a> -->
-                <a href="RESUME.pdf" class="text-primary-blue hover:text-secondary-blue text-3xl transition-colors"
-                    aria-label="ORCID Profile">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                        class="bi bi-person-circle" viewBox="0 0 16 16">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                        <path fill-rule="evenodd"
-                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                    </svg>
-                </a>
+        <div class="container mx-auto px-6 py-16">
+            <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                <div class="flex flex-col md:flex-row gap-12 md:gap-16">
+                    <!-- Left Side: Contact Info -->
+                    <div class="md:w-1/2">
+                        <h3 class="text-3xl text-secondary-blue mb-4 font-bold">Get In Touch</h3>
+                        <p class="text-gray-600 mb-8">
+                            Have a question or a proposal? Fill out the form or contact me directly through the details
+                            below.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-light-blue text-primary-blue rounded-full flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-mail">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl text-gray-800 font-semibold">Email</h4>
+                                    <a href="mailto:shahid.nit002@gmail.com"
+                                        class="text-lg text-primary-blue hover:underline">shahid.nit002@gmail.com</a>
+                                    <br>
+                                    <a href="mailto:shahid.sultan@cukashmir.ac.in"
+                                        class="text-lg text-primary-blue hover:underline">shahid.sultan@cukashmir.ac.in</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-light-blue text-primary-blue rounded-full flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-phone">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl text-gray-800 font-semibold">Phone</h4>
+                                    <a href="tel:+917006687396"
+                                        class="text-lg text-primary-blue hover:underline">+91-7006687396</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex space-x-6 mt-10">
+                            <a href="https://www.linkedin.com/in/shahid-sultan-770b15101?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                class="text-gray-400 hover:text-primary-blue transition-colors"
+                                aria-label="LinkedIn Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                                    class="bi bi-linkedin" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                                </svg>
+                            </a>
+                            <a href="https://github.com/shahidsultan7"
+                                class="text-gray-400 hover:text-primary-blue transition-colors"
+                                aria-label="GitHub Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                                    class="bi bi-github" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                                </svg>
+                            </a>
+                             <a href="RESUME.pdf" class="text-gray-400 hover:text-primary-blue transition-colors"
+                                aria-label="Resume/CV">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                                    class="bi bi-person-circle" viewBox="0 0 16 16">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                    <path fill-rule="evenodd"
+                                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Form -->
+                    <div class="md:w-1/2">
+                        <form action="#" method="POST" class="h-full flex flex-col justify-center">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="first-name" class="block text-gray-700 font-semibold mb-2">First
+                                        Name</label>
+                                    <input type="text" id="first-name" name="first-name"
+                                        class="w-full p-3 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-blue transition"
+                                        placeholder="First Name" required>
+                                </div>
+                                <div>
+                                    <label for="last-name" class="block text-gray-700 font-semibold mb-2">Last
+                                        Name</label>
+                                    <input type="text" id="last-name" name="last-name"
+                                        class="w-full p-3 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-blue transition"
+                                        placeholder="Last Name" required>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label>
+                                <input type="email" id="email" name="email"
+                                    class="w-full p-3 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-blue transition"
+                                    placeholder="you@example.com" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="subject" class="block text-gray-700 font-semibold mb-2">Subject</label>
+                                <input type="text" id="subject" name="subject"
+                                    class="w-full p-3 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-blue transition"
+                                    placeholder="Regarding a collaboration opportunity">
+                            </div>
+                            <div class="mb-8">
+                                <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5"
+                                    class="w-full p-3 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-blue transition"
+                                    placeholder="Your message here..." required></textarea>
+                            </div>
+                            <div class="text-left">
+                                <button type="submit" class="btn-primary text-lg">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
