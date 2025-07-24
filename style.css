@@ -1,4 +1,3 @@
-/* Custom CSS Variables */
 :root {
     --primary-blue: #00CFFF;
     --secondary-blue: #007b99;
@@ -9,24 +8,21 @@
     --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Base Body Styles */
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--white-bg);
     color: var(--gray-text);
     line-height: 1.6;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
 }
 
-/* Headings Font */
 h1, h2, h3, h4 {
     font-family: 'Poppins', sans-serif;
     color: var(--secondary-blue);
 }
 
-/* Main Header Styling */
 #mainHeader {
     position: fixed;
     top: 0;
@@ -36,46 +32,36 @@ h1, h2, h3, h4 {
     z-index: 1000;
 }
 
-/* Scrolled Header State */
 .scrolled-header {
     background-color: #ffffff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* Navigation Link Styling (Default for Desktop) */
 .nav-link {
-    /* Initial color is set by text-white in HTML. */
-    /* Transition for color is handled by Tailwind's transition-colors class. */
     text-decoration: none;
     font-weight: 600;
-    padding: 0.5rem 0.75rem; /* Use rem for better scaling */
+    padding: 0.5rem 0.75rem;
     border-radius: 0.375rem;
-    transition: color 0.3s ease, background-color 0.3s ease; /* Keep transition here for smoothness */
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Navigation Link Styling when Header is Scrolled */
 .scrolled-header .nav-link {
-    color: var(--gray-text); /* Removed !important - JS will manage Tailwind classes */
+    color: var(--gray-text);
 }
 
-/* Navigation Link Hover Effects */
 .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Light hover for transparent header */
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Navigation Link Hover Effects when Header is Scrolled */
 .scrolled-header .nav-link:hover {
-    color: var(--primary-blue); /* Removed !important - JS will manage Tailwind classes, this will apply on hover */
+    color: var(--primary-blue);
     background-color: #F3F4F6;
 }
 
-/* Header Title Styling when Header is Scrolled */
-.scrolled-header #headerTitleSpan { /* Targeting by ID for higher specificity */
-    color: var(--gray-text); /* Removed !important - JS will manage Tailwind classes */
+.scrolled-header #headerTitleSpan {
+    color: var(--gray-text);
 }
 
-
-/* Primary Button Styling */
 .btn-primary {
     display: inline-block;
     background-color: var(--primary-blue);
@@ -92,7 +78,6 @@ h1, h2, h3, h4 {
     transform: translateY(-2px);
 }
 
-/* Card Styling */
 .card {
     background-color: white;
     border-radius: 0.75rem;
@@ -106,14 +91,12 @@ h1, h2, h3, h4 {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* Background Pattern */
 .bg-pattern-light {
     background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zm0-30V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     background-size: 30px 30px;
     background-repeat: repeat;
 }
 
-/* Typewriter Text Animation */
 .typewriter-text {
     display: inline-block;
     overflow: hidden;
@@ -130,18 +113,14 @@ h1, h2, h3, h4 {
     }
 }
 
-/* Icon Placeholder Styling */
 .icon-placeholder {
-    /* Consider using Tailwind classes like w-12 h-12 md:w-16 md:h-16 for responsiveness */
-    /* width: 3rem;
-    height: 3rem; */
     background-color: var(--light-blue);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--secondary-blue);
-    font-size: 1.5rem; /* Consider using Tailwind text-xl md:text-2xl */
+    font-size: 1.5rem;
     margin: 0 auto 1rem;
     transition: transform 0.3s ease;
 }
@@ -150,13 +129,12 @@ h1, h2, h3, h4 {
     transform: rotate(360deg);
 }
 
-/* Footer Styling */
 footer {
-    background-color: #111827; /* bg-gray-900 */
-    color: #9CA3AF; /* text-gray-400 */
+    background-color: #111827;
+    color: #9CA3AF;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    border-top: 1px solid #374151; /* border-gray-700 */
+    border-top: 1px solid #374151;
 }
 
 footer .container {
@@ -188,7 +166,7 @@ footer .social-links a:hover {
 
 footer .footer-text {
     text-align: center;
-    font-size: 0.875rem; /* text-sm */
+    font-size: 0.875rem;
 }
 
 footer .footer-text a {
@@ -202,8 +180,6 @@ footer .footer-text a:hover {
     color: var(--secondary-blue);
 }
 
-
-/* Glass Card Effect */
 .glass-card {
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -214,18 +190,13 @@ footer .footer-text a:hover {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* About Section Background */
 .bg-about {
     background-image: url('./images/background.jpg');
     background-size: cover;
     background-position: center;
 }
 
-/* Image Container for Circular Images */
 .image-container {
-    /* Consider using Tailwind classes like w-48 h-48 md:w-64 md:h-64 for responsiveness */
-    /* width: 200px;
-    height: 200px; */
     border-radius: 50%;
     overflow: hidden;
     position: relative;
@@ -233,7 +204,6 @@ footer .footer-text a:hover {
     transition: border-color 0.3s ease-in-out;
 }
 
-/* Image inside the container */
 .image-container img {
     width: 100%;
     height: 100%;
@@ -241,18 +211,14 @@ footer .footer-text a:hover {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Hover effects for image container */
 .image-container:hover {
-    border-color: #0891B2; /* cyan-700 equivalent */
+    border-color: #0891B2;
 }
 
 .image-container:hover img {
     transform: scale(1.1);
 }
 
-/* --- NEW MOBILE MENU STYLES --- */
-
-/* Hamburger Icon & Animation */
 .hamburger-icon span {
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     transform-origin: center;
@@ -274,9 +240,8 @@ footer .footer-text a:hover {
     transform: translateY(-10px) rotate(-45deg);
 }
 
-/* Mobile Side Menu Panel */
 #mobileSideMenu {
-    background-color: #111827; /* bg-gray-900 */
+    background-color: #111827;
 }
 
 #mobileSideMenu .nav-link {
@@ -285,7 +250,7 @@ footer .footer-text a:hover {
     gap: 0.75rem;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
-    font-size: 1.125rem; /* text-lg */
+    font-size: 1.125rem;
     transition: background-color 0.2s ease;
 }
 
@@ -293,15 +258,11 @@ footer .footer-text a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Back to Top Button Styling */
 #backToTopBtn {
-    /* --- Blue Glass Effect --- */
-    background-color: rgba(0, 207, 255, 0.5); /* Primary blue with 50% opacity */
+    background-color: rgba(0, 207, 255, 0.5);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* For Safari support */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for the glass edge */
-    /* --- End Blue Glass Effect --- */
-
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: white;
     opacity: 0;
     pointer-events: none;
@@ -310,7 +271,7 @@ footer .footer-text a:hover {
 }
 
 #backToTopBtn:hover {
-    background-color: rgba(0, 123, 153, 0.7); /* Darker blue on hover */
+    background-color: rgba(0, 123, 153, 0.7);
     transform: translateY(0) scale(1.1);
 }
 

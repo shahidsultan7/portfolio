@@ -14,59 +14,96 @@
 
 <body class="antialiased">
     <header id="mainHeader" class="sticky top-0 z-50">
-    <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
-        <!-- Logo and Title Link -->
-        <a href="index.html" class="flex items-center">
-            <img src="./images/logo.png" alt="Logo" class="mr-2 h-8 sm:h-9 rounded-md">
-            <span class="text-xl sm:text-2xl md:text-3xl font-bold transition-colors duration-300 text-white"
-                id="headerTitleSpan">DR. SHAHID SULTAN</span>
-        </a>
-
-        <!-- Desktop Navigation -->
-        <nav id="desktopNav" class="hidden md:block">
-            <ul class="flex space-x-2 md:space-x-4">
-                <li><a href="index.html" class="nav-link text-white hover:text-gray-300">Home</a></li>
-                <li><a href="about.html" class="nav-link text-white hover:text-gray-300">About</a></li>
-                <li><a href="publications.html" class="nav-link text-white hover:text-gray-300">Publications</a></li>
-                <li><a href="patents-projects.html" class="nav-link text-white hover:text-gray-300">Patents</a></li>
-                <li><a href="courses.html" class="nav-link text-white hover:text-gray-300">Courses & Certifications</a></li>
-                <li><a href="contact.html" class="nav-link text-white hover:text-gray-300">Contact</a></li>
-            </ul>
-        </nav>
-
-        <!-- Hamburger Menu Button -->
-        <div class="md:hidden">
-            <button id="mobileMenuButton" class="relative z-50 p-2">
-                <div class="hamburger-icon space-y-2">
-                    <span class="block w-8 h-0.5 bg-white"></span>
-                    <span class="block w-8 h-0.5 bg-white"></span>
-                    <span class="block w-8 h-0.5 bg-white"></span>
-                </div>
-            </button>
-        </div>
-    </div>
-
-    <!-- Mobile Side Menu (Off-canvas) -->
-    <div id="mobileSideMenu" class="fixed top-0 left-0 w-72 h-full bg-gray-900 text-white p-6 transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-lg flex flex-col">
-        <div class="flex justify-between items-center pb-4 border-b border-gray-700">
-             <a href="index.html" class="flex items-center">
-                <img src="./images/logo.png" alt="Logo" class="mr-2 h-8 rounded-md">
-                <span class="text-xl font-bold">DR. SHAHID SULTAN</span>
+        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+            <!-- Logo and Title Link -->
+            <a href="index.html" class="flex items-center">
+                <img src="./images/logo.png" alt="Logo" class="mr-2 h-8 sm:h-9 rounded-md">
+                <span class="text-xl sm:text-2xl md:text-3xl font-bold transition-colors duration-300 text-white"
+                    id="headerTitleSpan">DR. SHAHID SULTAN</span>
             </a>
-            <!-- <button id="closeMenuButton" class="text-white focus:outline-none p-2 rounded-md hover:bg-gray-700">
+
+            <!-- Desktop Navigation -->
+            <nav id="desktopNav" class="hidden md:block">
+                <ul class="flex space-x-2 md:space-x-4">
+                    <li><a href="index.html" class="nav-link text-white hover:text-gray-300">Home</a></li>
+                    <li><a href="about.html" class="nav-link text-white hover:text-gray-300">About</a></li>
+                    <li><a href="publications.html" class="nav-link text-white hover:text-gray-300">Publications</a>
+                    </li>
+                    <li><a href="patents-projects.html" class="nav-link text-white hover:text-gray-300">Patents</a></li>
+                    <li><a href="courses.html" class="nav-link text-white hover:text-gray-300">Courses &
+                            Certifications</a></li>
+                    <li><a href="contact.html" class="nav-link text-white hover:text-gray-300">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Hamburger Menu Button -->
+            <div class="md:hidden">
+                <button id="mobileMenuButton" class="relative z-50 p-2">
+                    <div class="hamburger-icon space-y-2">
+                        <span class="block w-8 h-0.5 bg-white"></span>
+                        <span class="block w-8 h-0.5 bg-white"></span>
+                        <span class="block w-8 h-0.5 bg-white"></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Side Menu (Off-canvas) -->
+        <div id="mobileSideMenu"
+            class="fixed top-0 left-0 w-72 h-full bg-gray-900 text-white p-6 transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-lg flex flex-col">
+            <div class="flex justify-between items-center pb-4 border-b border-gray-700">
+                <a href="index.html" class="flex items-center">
+                    <img src="./images/logo.png" alt="Logo" class="mr-2 h-8 rounded-md">
+                    <span class="text-xl font-bold">DR. SHAHID SULTAN</span>
+                </a>
+                <!-- <button id="closeMenuButton" class="text-white focus:outline-none p-2 rounded-md hover:bg-gray-700">
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button> -->
+            </div>
+            <ul class="flex flex-col space-y-2 py-4 flex-grow">
+                <li><a href="index.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg><span>Home</span></a></li>
+                <li><a href="about.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg><span>About</span></a></li>
+                <li><a href="publications.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                            height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg><span>Publications</span></a></li>
+                <li><a href="patents-projects.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                            height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-award">
+                            <circle cx="12" cy="8" r="7"></circle>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                        </svg><span>Patents</span></a></li>
+                <li><a href="courses.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                            height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg><span>Courses & Certs</span></a></li>
+                <li><a href="contact.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                            height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg><span>Contact</span></a></li>
+            </ul>
         </div>
-        <ul class="flex flex-col space-y-2 py-4 flex-grow">
-            <li><a href="index.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span>Home</span></a></li>
-            <li><a href="about.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span>About</span></a></li>
-            <li><a href="publications.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg><span>Publications</span></a></li>
-            <li><a href="patents-projects.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-award"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg><span>Patents</span></a></li>
-            <li><a href="courses.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg><span>Courses & Certs</span></a></li>
-            <li><a href="contact.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span>Contact</span></a></li>
-        </ul>
-    </div>
-</header>
+    </header>
 
 
     <section id="patents-projects-page-content" class="bg-gray-50">
@@ -76,8 +113,9 @@
             <div
                 class="bg-white/10 backdrop-blur-md rounded-xl shadow-lg border border-white/20 p-6 md:p-10 max-w-5xl w-full text-center animate-fade-in-up">
                 <h2 class="text-4xl text-white text-center mb-8 mt-8">Patents</h2>
-                 <p class="text-lg text-white max-w-2xl mx-auto">
-                    A showcase of innovative solutions and intellectual property contributions in the field of technology.
+                <p class="text-lg text-white max-w-2xl mx-auto">
+                    A showcase of innovative solutions and intellectual property contributions in the field of
+                    technology.
                 </p>
             </div>
         </div>
@@ -87,30 +125,51 @@
             <div class="max-w-4xl mx-auto grid md:grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Patent Card 1 -->
                 <div class="card p-8 flex flex-col h-full">
-                    <div class="flex-shrink-0 w-16 h-16 bg-light-blue text-primary-blue rounded-full flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                    <div
+                        class="flex-shrink-0 w-16 h-16 bg-light-blue text-primary-blue rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-smartphone">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                        </svg>
                     </div>
                     <div class="flex-grow">
-                        <h4 class="text-2xl text-gray-800 font-semibold mb-3">Near Field Communication (NFC) based Pet health transparency and safety system</h4>
-                        <p class="text-gray-600">This system utilizes NFC technology to provide a transparent and accessible health and safety record for pets.</p>
+                        <h4 class="text-2xl text-gray-800 font-semibold mb-3">Near Field Communication (NFC) based Pet
+                            health transparency and safety system</h4>
+                        <p class="text-gray-600">This system utilizes NFC technology to provide a transparent and
+                            accessible health and safety record for pets.</p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-gray-200">
-                        <p class="text-secondary-blue font-semibold">Published: <span class="font-normal text-gray-700">December 27, 2024</span></p>
-                        <p class="text-secondary-blue font-semibold">Application No: <span class="font-normal text-gray-700">202411097194</span></p>
+                        <p class="text-secondary-blue font-semibold">Published: <span
+                                class="font-normal text-gray-700">December 27, 2024</span></p>
+                        <p class="text-secondary-blue font-semibold">Application No: <span
+                                class="font-normal text-gray-700">202411097194</span></p>
                     </div>
                 </div>
                 <!-- Patent Card 2 -->
-                 <div class="card p-8 flex flex-col h-full">
-                    <div class="flex-shrink-0 w-16 h-16 bg-light-blue text-primary-blue rounded-full flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-radio"><circle cx="12" cy="12" r="2"></circle><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-10.48-.01a6 6 0 0 1 0-8.49m11.92 1.42a9 9 0 0 1 0 5.66m-14.03.01a9 9 0 0 1 0-5.66"></path></svg>
+                <div class="card p-8 flex flex-col h-full">
+                    <div
+                        class="flex-shrink-0 w-16 h-16 bg-light-blue text-primary-blue rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-radio">
+                            <circle cx="12" cy="12" r="2"></circle>
+                            <path
+                                d="M16.24 7.76a6 6 0 0 1 0 8.49m-10.48-.01a6 6 0 0 1 0-8.49m11.92 1.42a9 9 0 0 1 0 5.66m-14.03.01a9 9 0 0 1 0-5.66">
+                            </path>
+                        </svg>
                     </div>
                     <div class="flex-grow">
                         <h4 class="text-2xl text-gray-800 font-semibold mb-3">RF based Remote Control Finder</h4>
-                        <p class="text-gray-600">An innovative solution using Radio Frequency (RF) technology to easily locate misplaced remote controls.</p>
+                        <p class="text-gray-600">An innovative solution using Radio Frequency (RF) technology to easily
+                            locate misplaced remote controls.</p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-gray-200">
-                        <p class="text-secondary-blue font-semibold">Published: <span class="font-normal text-gray-700">January 3, 2025</span></p>
-                        <p class="text-secondary-blue font-semibold">Application No: <span class="font-normal text-gray-700">202411100897</span></p>
+                        <p class="text-secondary-blue font-semibold">Published: <span
+                                class="font-normal text-gray-700">January 3, 2025</span></p>
+                        <p class="text-secondary-blue font-semibold">Application No: <span
+                                class="font-normal text-gray-700">202411100897</span></p>
                     </div>
                 </div>
             </div>
@@ -118,11 +177,12 @@
     </section>
 
     <footer class="bg-gray-900 text-gray-400 py-8">
-            <p class="text-sm text-center">
-                © <span id="currentYear"></span> Dr. Shahid Sultan Hajam | Developed by
-                <a href="https://nimrawani04.github.io/portfolio/" class="text-primary-blue hover:underline">Nimra Wani</a> | All Rights
-                Reserved.
-            </p>
+        <p class="text-sm text-center">
+            © <span id="currentYear"></span> Dr. Shahid Sultan Hajam | Developed by
+            <a href="https://nimrawani04.github.io/portfolio/" class="text-primary-blue hover:underline">Nimra Wani</a>
+            | All Rights
+            Reserved.
+        </p>
 
     </footer>
 

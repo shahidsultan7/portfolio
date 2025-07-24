@@ -1,40 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Mobile Menu Logic ---
     const mobileMenuButton = document.getElementById('mobileMenuButton');
     const mobileSideMenu = document.getElementById('mobileSideMenu');
-    
-    // Create an overlay element
+    const mainHeader = document.getElementById('mainHeader');
+    const headerTitleSpan = mainHeader ? mainHeader.querySelector('#headerTitleSpan') : null;
+    const allNavLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+    const backToTopButton = document.createElement('button');
     const overlay = document.createElement('div');
+
     overlay.classList.add('fixed', 'inset-0', 'bg-black', 'z-40', 'transition-opacity', 'duration-300', 'ease-in-out');
     overlay.style.opacity = '0';
     overlay.style.pointerEvents = 'none';
     document.body.appendChild(overlay);
 
-    // Function to open the mobile menu
     function openMobileMenu() {
         if (mobileSideMenu) {
             mobileSideMenu.classList.remove('-translate-x-full');
             mobileSideMenu.classList.add('translate-x-0');
-            mobileMenuButton.classList.add('is-open'); // For icon animation
+            mobileMenuButton.classList.add('is-open');
             overlay.style.opacity = '0.5';
             overlay.style.pointerEvents = 'auto';
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            document.body.style.overflow = 'hidden';
         }
     }
 
-    // Function to close the mobile menu
     function closeMobileMenu() {
         if (mobileSideMenu) {
             mobileSideMenu.classList.remove('translate-x-0');
             mobileSideMenu.classList.add('-translate-x-full');
-            mobileMenuButton.classList.remove('is-open'); // For icon animation
+            mobileMenuButton.classList.remove('is-open');
             overlay.style.opacity = '0';
             overlay.style.pointerEvents = 'none';
-            document.body.style.overflow = ''; // Restore scrolling
+            document.body.style.overflow = '';
         }
     }
 
-    // Event listener for the main hamburger button to toggle the menu
     if (mobileMenuButton) {
         mobileMenuButton.addEventListener('click', () => {
             if (mobileMenuButton.classList.contains('is-open')) {
@@ -44,21 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
-    // Event listener for overlay click to close menu
+
     overlay.addEventListener('click', closeMobileMenu);
 
-    // Close mobile menu when a link inside it is clicked
     const mobileNavLinks = mobileSideMenu ? mobileSideMenu.querySelectorAll('.nav-link') : [];
     mobileNavLinks.forEach(link => {
         link.addEventListener('click', closeMobileMenu);
     });
-
-
-    // --- Dynamic Header Color Change Logic ---
-    const mainHeader = document.getElementById('mainHeader');
-    const headerTitleSpan = mainHeader ? mainHeader.querySelector('#headerTitleSpan') : null;
-    const allNavLinks = document.querySelectorAll('.nav-link');
 
     function handleHeaderScroll() {
         if (!mainHeader) return;
@@ -73,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 headerTitleSpan.classList.add(grayTextColorClass);
             }
             allNavLinks.forEach(link => {
-                if (!link.closest('#mobileSideMenu')) { // Don't change mobile menu links
+                if (!link.closest('#mobileSideMenu')) {
                     link.classList.remove('text-white');
                     link.classList.add(grayTextColorClass);
                 }
@@ -93,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Smooth Scrolling for Anchor Links ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -109,15 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Update Current Year in Footer ---
     const currentYearElement = document.getElementById('currentYear');
     if (currentYearElement) {
         currentYearElement.textContent = new Date().getFullYear();
     }
-
-    // --- Active Navigation Link Highlighting on Scroll ---
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
 
     function highlightNavLinkOnScroll() {
         let currentSectionId = '';
@@ -130,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        navLinks.forEach(link => {
+        allNavLinks.forEach(link => {
             link.classList.remove('active');
             const linkHref = link.getAttribute('href');
             const targetId = linkHref.startsWith('#') ? linkHref.slice(1) : null;
@@ -143,9 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Back to Top Button Functionality ---
-    const backToTopButton = document.createElement('button');
-    backToTopButton.id = 'backToTopBtn'; // Assign an ID for CSS styling
+    backToTopButton.id = 'backToTopBtn';
     backToTopButton.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up">
             <line x1="12" y1="19" x2="12" y2="5"></line>
@@ -174,8 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
-    // --- Card Animation on Scroll ---
     const cards = document.querySelectorAll('.card');
     function animateCards() {
         cards.forEach(card => {
@@ -187,7 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Consolidated Scroll Event Listener ---
     window.addEventListener('scroll', () => {
         handleHeaderScroll();
         highlightNavLinkOnScroll();
@@ -195,7 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
         animateCards();
     });
 
-    // --- Initial Calls on Page Load ---
     handleHeaderScroll();
     highlightNavLinkOnScroll();
     toggleBackToTopButton();
