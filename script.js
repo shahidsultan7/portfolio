@@ -145,24 +145,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Back to Top Button Functionality ---
     const backToTopButton = document.createElement('button');
-    backToTopButton.innerHTML = '&#8593;'; // Unicode for upward arrow
+    backToTopButton.id = 'backToTopBtn'; // Assign an ID for CSS styling
+    backToTopButton.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+    `;
     backToTopButton.classList.add(
-        'back-to-top', 'fixed', 'bottom-6', 'right-6', 'bg-blue-600',
-        'text-white', 'p-3', 'rounded-full', 'shadow-md',
-        'transition-opacity', 'duration-300', 'z-50', 'cursor-pointer',
-        'hover:bg-blue-700', 'focus:outline-none', 'focus:ring-2', 'focus:ring-blue-500', 'focus:ring-opacity-50'
+        'fixed', 'bottom-8', 'right-8', 'w-14', 'h-14',
+        'rounded-full', 'shadow-lg', 'flex', 'items-center', 'justify-center',
+        'z-50', 'cursor-pointer'
     );
-    backToTopButton.style.opacity = '0';
-    backToTopButton.style.pointerEvents = 'none';
     document.body.appendChild(backToTopButton);
 
     function toggleBackToTopButton() {
         if (window.scrollY > 300) {
-            backToTopButton.style.opacity = '1';
-            backToTopButton.style.pointerEvents = 'auto';
+            backToTopButton.classList.add('visible');
         } else {
-            backToTopButton.style.opacity = '0';
-            backToTopButton.style.pointerEvents = 'none';
+            backToTopButton.classList.remove('visible');
         }
     }
 
@@ -172,6 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
         });
     });
+
 
     // --- Card Animation on Scroll ---
     const cards = document.querySelectorAll('.card');

@@ -152,25 +152,56 @@ h1, h2, h3, h4 {
 
 /* Footer Styling */
 footer {
-    background-color: var(--white-bg);
+    background-color: #111827; /* bg-gray-900 */
+    color: #9CA3AF; /* text-gray-400 */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-top: 1px solid #374151; /* border-gray-700 */
+}
+
+footer .container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+footer .social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+footer .social-links a {
+    color: #9CA3AF;
     transition: color 0.3s ease;
 }
 
-footer p {
-    transition: color 0.3s ease;
-}
-
-footer p:hover {
+footer .social-links a:hover {
     color: var(--primary-blue);
 }
 
-footer p span.text-primary-blue {
-    font-weight: 600;
+footer .footer-text {
+    text-align: center;
+    font-size: 0.875rem; /* text-sm */
 }
 
-footer p:hover span.text-primary-blue {
+footer .footer-text a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .footer-text a:hover {
+    text-decoration: underline;
     color: var(--secondary-blue);
 }
+
 
 /* Glass Card Effect */
 .glass-card {
@@ -260,4 +291,31 @@ footer p:hover span.text-primary-blue {
 
 #mobileSideMenu .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Back to Top Button Styling */
+#backToTopBtn {
+    /* --- Blue Glass Effect --- */
+    background-color: rgba(0, 207, 255, 0.5); /* Primary blue with 50% opacity */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for the glass edge */
+    /* --- End Blue Glass Effect --- */
+
+    color: white;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, background-color 0.3s, backdrop-filter 0.3s;
+}
+
+#backToTopBtn:hover {
+    background-color: rgba(0, 123, 153, 0.7); /* Darker blue on hover */
+    transform: translateY(0) scale(1.1);
+}
+
+#backToTopBtn.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
 }
