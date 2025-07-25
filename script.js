@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </svg>
     `;
     backToTopButton.classList.add(
-        'fixed', 'bottom-8', 'right-8', 'w-14', 'h-14',
+        'fixed', 'bottom-8', 'right-8', 'w-10', 'h-10',
         'rounded-full', 'shadow-lg', 'flex', 'items-center', 'justify-center',
         'z-50', 'cursor-pointer'
     );
