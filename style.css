@@ -280,3 +280,7 @@ footer .footer-text a:hover {
     pointer-events: auto;
     transform: translateY(0);
 }
+.text-primary-blue {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
