@@ -33,4 +33,4 @@ Dr. Shahid Sultan is an Assistant Professor at the Central University of Kashmir
 
 ## Credits
 
-This website was developed by **[Nimra Wani](https://nimrawani04.github.io/portfolio/)**.
+This website was developed by **[Nimra Wani](https://nimrawani.vercel.app)**.
